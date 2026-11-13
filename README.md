@@ -60,6 +60,8 @@ potential), ball control and reactions carry the most weight.
 ```bash
 streamlit run app/streamlit_app.py
 ```
+The app builds its own database and model on first launch, so it deploys to
+[Streamlit Community Cloud](https://share.streamlit.io) as-is (main file: `app/streamlit_app.py`).
 - **Match predictor:** pick any two teams for win/draw/loss probabilities from current Elo and form
 - **Player archetypes:** look up a player's archetype and the 8 most similar players by style
 - **Team history:** season-by-season record and recent results (served by a parameterised SQL query)

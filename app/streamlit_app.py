@@ -4,6 +4,7 @@ Streamlit front end:  streamlit run app/streamlit_app.py
 """
 
 import os
+import subprocess
 import sys
 
 import joblib
@@ -18,8 +19,16 @@ from football import db, features, players  # noqa: E402
 st.set_page_config(page_title="Football Analytics", page_icon="⚽", layout="wide")
 
 
+def ensure_built():
+    """On a fresh server (e.g. Streamlit Community Cloud) the database and model don't exist yet: build them once."""
+    if not (os.path.exists(db.DB_PATH) and os.path.exists(os.path.join(ROOT, "models", "match_model.joblib"))):
+        with st.spinner("First launch: downloading data and training models (about a minute)..."):
+            subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "run_pipeline.py")], check=True)
+
+
 @st.cache_resource
 def load():
+    ensure_built()
     con = db.connect_readonly()                 # read-only: the UI can never write to the DB
     bundle = joblib.load(os.path.join(ROOT, "models", "match_model.joblib"))
     p = db.read_players(con)
