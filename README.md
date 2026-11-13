@@ -102,8 +102,10 @@ reports/        summary.json, model results, player archetypes
 figures/        charts in this README
 ```
 
-## Next steps
-- Add NBA player data (per-36 and advanced stats) to the clustering module
+## Future work
+- **NBA.** The original plan covered basketball too. Adding NBA player stats (per-36 and advanced) to the
+  clustering module needs a stats source that allows automated downloads (stats.nba.com timed out and
+  Basketball-Reference limits automated access).
 - Expected-goals (xG) features instead of shots on target
 - Deploy the app to Streamlit Community Cloud
 
