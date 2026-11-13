@@ -1,0 +1,6 @@
+model,accuracy,log_loss,rps,brier
+Baseline: always home win,0.409,1.0797,0.2345,0.6546
+Baseline: Elo only,0.5251,0.9925,0.2043,0.5942
+Logistic regression,0.5303,0.9886,0.2028,0.5914
+Decision tree,0.5356,0.9928,0.2016,0.5909
+Bookmakers (closing odds),0.5409,0.9722,0.1978,0.5801
