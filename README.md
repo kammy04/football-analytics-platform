@@ -7,6 +7,8 @@ It started as a plan for a "sports analytics platform" (data mining + informatio
 build follows that plan step by step: scope → data → cleaning → SQL storage → clustering and
 classification → security → UI → testing → documentation.
 
+**🔗 Live app: https://football-analytics-platform-jkjibgwvi6bvr9cknbklu8.streamlit.app/** (may take ~30 seconds to wake up if nobody has used it recently)
+
 ![Model comparison](figures/model_comparison.png)
 
 ## Results
